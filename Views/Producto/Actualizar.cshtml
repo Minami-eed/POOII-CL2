@@ -1,0 +1,45 @@
+﻿@model POOII_CL2_QUISPE_EDSON.Models.Producto
+
+@{
+    ViewData["Title"] = "Actualizar Producto";
+}
+
+<h1>Actualizar Producto</h1>
+
+@using (Html.BeginForm("Actualizar", "Producto", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nombre)
+        @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IdTipo)
+        @Html.TextBoxFor(model => model.IdTipo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.IdTipo, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Precio)
+        @Html.TextBoxFor(model => model.Precio, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Fecha)
+        @Html.TextBoxFor(model => model.Fecha, "{0:yyyy-MM-dd}", new { @class = "form-control datepicker" })
+        @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
+    </div>
+    <br />
+    <div class="d-flex justify-content-start mb-3">
+        <div class="form-group">
+            <input type="submit" value="Guardar" class="btn btn-primary" />
+        </div>
+        <div class="ms-3">
+            <a asp-action="Listado" class="btn btn-secondary">Regresar al Listado</a>
+        </div>
+    </div>
+}

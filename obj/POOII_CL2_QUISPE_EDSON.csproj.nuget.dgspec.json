@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WorkSpace\\GitHub\\Repository's\\POOII-CL2\\POOII_CL2_QUISPE_EDSON\\POOII_CL2_QUISPE_EDSON.csproj": {}
+    "D:\\WorkSpace\\GitHub\\Repository's\\POOII-CL2\\POOII-CL2\\POOII_CL2_QUISPE_EDSON.csproj": {}
   },
   "projects": {
-    "D:\\WorkSpace\\GitHub\\Repository's\\POOII-CL2\\POOII_CL2_QUISPE_EDSON\\POOII_CL2_QUISPE_EDSON.csproj": {
+    "D:\\WorkSpace\\GitHub\\Repository's\\POOII-CL2\\POOII-CL2\\POOII_CL2_QUISPE_EDSON.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WorkSpace\\GitHub\\Repository's\\POOII-CL2\\POOII_CL2_QUISPE_EDSON\\POOII_CL2_QUISPE_EDSON.csproj",
+        "projectUniqueName": "D:\\WorkSpace\\GitHub\\Repository's\\POOII-CL2\\POOII-CL2\\POOII_CL2_QUISPE_EDSON.csproj",
         "projectName": "POOII_CL2_QUISPE_EDSON",
-        "projectPath": "D:\\WorkSpace\\GitHub\\Repository's\\POOII-CL2\\POOII_CL2_QUISPE_EDSON\\POOII_CL2_QUISPE_EDSON.csproj",
+        "projectPath": "D:\\WorkSpace\\GitHub\\Repository's\\POOII-CL2\\POOII-CL2\\POOII_CL2_QUISPE_EDSON.csproj",
         "packagesPath": "C:\\Users\\i2019\\.nuget\\packages\\",
-        "outputPath": "D:\\WorkSpace\\GitHub\\Repository's\\POOII-CL2\\POOII_CL2_QUISPE_EDSON\\obj\\",
+        "outputPath": "D:\\WorkSpace\\GitHub\\Repository's\\POOII-CL2\\POOII-CL2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.13, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

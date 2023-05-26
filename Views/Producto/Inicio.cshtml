@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<style>
+    .about-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 40px;
+        text-align: center;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+    }
+
+    .about-heading {
+        font-size: 32px;
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 20px;
+    }
+
+    .about-description {
+        font-size: 18px;
+        color: #6c757d;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    .feature-list {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 40px 0;
+    }
+
+    .feature-list li {
+        margin-right: 10px;
+    }
+
+    .feature-list li:last-child {
+        margin-right: 0;
+    }
+
+    .feature-list li a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .feature-list li a:hover {
+        background-color: #0056b3;
+    }
+</style>
+<div class="about-container">
+    <h1 class="about-heading">Bienvenido</h1>
+    <p class="about-description">
+        En esta aplicación web desarrollada en ASP.NET MVC y C#, hemos aplicado los conceptos aprendidos en el curso para permitir realizar operaciones de consultas y filtros en una tabla de productos almacenados en una base de datos SQL Server.
+    </p>
+    <p class="about-description">
+        Implementé un conjunto de funcionalidades que te permitirán realizar las siguientes acciones:
+    </p>
+    <ol class="about-description">
+        <li>Consultar los registros de la tabla Producto según el año del campo fecha.</li>
+        <li>Listar, agregar y actualizar los datos de la tabla Productos.</li>
+    </ol>
+    <p class="about-description">
+        Con esta aplicación, podrás gestionar de manera eficiente los productos y realizar consultas específicas según el año de la fecha de los registros.
+    </p>
+</div>
+
+<ul class="feature-list">
+    <li><a href="/Producto/Listado">Listado de Productos</a></li>
+    <li><a href="/Producto/Buscar">Buscar Productos(Año)</a></li>
+</ul>

@@ -1,0 +1,124 @@
+﻿@model List<POOII_CL2_QUISPE_EDSON.Models.Producto>
+
+@{
+    ViewData["Title"] = "BuscarPorAño";
+    var añoIngresado = ViewBag.AñoIngresado;
+}
+
+<style>
+    .empty-icon {
+        display: flex;
+        align-items: center;
+    }
+
+    .empty-icon .text {
+        margin-right: 10px;
+    }
+
+    .empty-icon .icon {
+        width: 40px;
+        height: 40px;
+    }
+</style>
+
+<h1>Buscando por Año</h1>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="found-products">
+        <div class="found-products">
+            <div class="found-products">
+                <div class="found-products">
+                    <div class="d-flex justify-content-start">
+                        <div class="text-right">
+                            <p class="mb-0" style="font-size: 28px;">Año de búsqueda: <span id="año-busqueda" style="color: blue; font-style: inherit;">@ViewBag.AñoIngresado</span></p>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="d-flex justify-content-start mb-3">
+                        <div class="navigation">
+                            @Html.ActionLink("Editar Busqueda ", "Buscar", new { /* id = Model.PrimaryKey */ }, new { @class = "btn btn-primary mb-2" })
+                            <br />
+                            <a asp-action="Listado" class="btn btn-secondary">Listado Completo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        @if (!string.IsNullOrEmpty(ViewBag.mensaje))
+        {
+            <div class="alert alert-success" style="font-size: 13px; margin: 5px; padding: 5px;">@ViewBag.mensaje</div>
+        }
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model[0].Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model[0].Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model[0].IdTipo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model[0].Precio)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model[0].Fecha)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var producto in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => producto.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => producto.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => producto.IdTipo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => producto.Precio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => producto.Fecha)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Actualizar", new { id = producto.Id })" class="btn btn-primary">Editar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="found-products">
+        <div class="d-flex justify-content-start">
+            <div class="text-right">
+                @if (!string.IsNullOrEmpty(ViewBag.mensaje))
+                {
+                    <div class="alert alert-danger" style="font-size: 15px; margin: 5px; padding: 5px;">@ViewBag.alerta</div>
+                }
+                <img class="icon" style="margin-left: 110px;" width="96" height="96" src="https://img.icons8.com/external-topaz-kerismaker/96/external-Empty-empty-state-topaz-kerismaker.png" alt="external-Empty-empty-state-topaz-kerismaker" />
+            </div>
+        </div>
+        <br />
+        <div class="d-flex justify-content-start mb-3">
+            <div class="navigation" style="margin-right: 26px;">
+                @Html.ActionLink("Editar Búsqueda", "Buscar", new { /* id = Model.PrimaryKey */ }, new { @class = "btn btn-primary mb-2" })
+            </div>
+            <div class="navigation">
+                <a asp-action="Listado" class="btn btn-secondary">Listado Completo</a>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,86 @@
+﻿@model IEnumerable<POOII_CL2_QUISPE_EDSON.Models.Producto>
+
+@{
+    ViewData["Title"] = "Buscar";
+}
+@section scripts {
+    <script src="~/js/site.js"></script>
+    <script>
+        function actualizarAñoIngresado() {
+            var añoInput = document.getElementById("año");
+            var añoIngresado = añoInput.value;
+            var añoBusqueda = document.getElementById("año-busqueda");
+            añoBusqueda.textContent = añoIngresado;
+        }
+    </script>
+}
+<style>
+    .search-form {
+        margin-bottom: 20px;
+    }
+
+    .search-form label {
+        font-weight: bold;
+    }
+
+    .search-form input[type="text"] {
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .search-form button {
+        padding: 8px 16px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .search-form button:hover {
+        background-color: #0056b3;
+    }
+
+    .search-results {
+        margin-top: 20px;
+    }
+
+    .search-results table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .search-results th,
+    .search-results td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+
+    .search-results th {
+        background-color: #f0f0f0;
+        font-weight: bold;
+    }
+
+    .search-results tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+</style>
+
+<div class="search-form">
+    <div class="d-inline-block">
+        <a asp-action="Inicio" class="text-decoration-none me-3" style="font-size: 25px;">Inicio  ></a>
+        <h1 class="d-inline">Buscar</h1>
+    </div>
+    <br />
+    <br />
+    <form action="/Producto/BuscarPorAño">
+        <label>Por Año: </label>
+        <input type="text" name="año" id="año" oninput="actualizarAñoIngresado()" required />
+        <button type="submit">Buscar</button>
+    </form>
+</div>
+<hr />
